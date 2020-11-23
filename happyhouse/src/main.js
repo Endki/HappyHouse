@@ -1,4 +1,6 @@
 import './assets/css/one-page-wonder.css'
+import './assets/css/land_home.css'
+// import './assets/css/dd.css'
 // import './assets/css/one-page-wonder.scss'
 import Vue from 'vue'
 import App from './App.vue'

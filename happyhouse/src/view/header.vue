@@ -56,7 +56,5 @@ export default {
 </script>
 
 <style>
-.container{
-   /* background:url('../image/seoul_view.jpg') no-repeat; */
-}
+
 </style>
