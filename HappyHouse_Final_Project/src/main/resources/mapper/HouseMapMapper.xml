@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.mapper.HouseMapMapper">
+
+	<select id="getSido" resultType="SidoGugunDongCode">
+		SELECT * FROM sido ORDER BY sidoId
+	</select>
+	
+	<select id="getGugunInSido" parameterType="java.lang.String" resultType="SidoGugunDongCode">
+		SELECT * FROM gugun WHERE sidoId = #{sido}
+	</select>
+	
+	<select id="getDongInGugun" parameterType="java.lang.String" resultType="SidoGugunDongCode">
+		SELECT * FROM dong WHERE gugunId = #{gugun}
+	</select>
+	
+	<select id="getHouseInDong" parameterType="java.lang.String" resultType="HouseInfo">
+		SELECT * FROM houseinfo WHERE code = #{dong}
+	</select>
+
+</mapper>

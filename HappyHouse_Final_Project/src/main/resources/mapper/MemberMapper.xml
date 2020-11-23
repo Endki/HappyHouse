@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.mapper.MemberMapper">
+
+	<select id="selectAll" resultType="Member">
+		SELECT * FROM member
+	</select>
+	
+	<select id="login" parameterType="Member" resultType="int">
+		SELECT count(*) FROM member WHERE id = #{id} and pass = #{pass}
+	</select>
+
+	<insert id="register" parameterType="Member">
+		INSERT INTO member VALUES (#{id}, #{pass}, #{admin}, #{email}, #{nickname}, {#passhint}, {#hintanswer})
+	</insert>
+
+	<delete id="delete" parameterType="string">
+		DELETE FROM member WHERE id = #{memberId}
+	</delete>
+	
+	<update id="update" parameterType="Member">
+        UPDATE member SET pass=#{pass}, email=#{email}, nickname=#{nickname} where id=#{id}
+    </update>
+    
+    <select id="findPass" parameterType="string" resultType="string">
+    	SELECT pass FROM member WHERE hintanswer = {#hintanswer}
+    </select>
+
+</mapper>
