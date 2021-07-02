@@ -18,8 +18,7 @@ tool
 skill
 
 1.JAVA
-~~2.VUE~~
-3.SQL
+
 
 
 시연영상
